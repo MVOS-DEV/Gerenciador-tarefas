@@ -1,59 +1,64 @@
-# Gerenciador de Tarefas em C
+# Gerenciador de Tarefas com GTK
 
-Um gerenciador de tarefas feito em C para organizar atividades do dia a dia, projetos e estudos da faculdade.
+Aplicativo desktop em C para organizar atividades diarias, projetos e estudos, agora com interface grafica feita em GTK.
 
-## Funcionalidades
+## O que o programa faz
 
-- Adicionar tarefas
-- Listar todas as tarefas
-- Listar apenas tarefas pendentes
-- Filtrar tarefas por categoria
-- Marcar tarefas como concluidas
-- Remover tarefas
-- Salvar os dados localmente em arquivo
+- cadastrar tarefas com titulo, categoria, prazo e descricao
+- listar todas as tarefas em uma tabela
+- filtrar por status ou categoria
+- marcar tarefas como concluidas
+- remover tarefas selecionadas
+- mostrar os detalhes completos da tarefa escolhida
+- salvar os dados localmente em `tarefas.dat`
 
-## Categorias disponiveis
+## Estrutura do projeto
 
-- Diaria
-- Projeto
-- Estudo
+- `gerenciador_tarefas.c`: interface grafica em GTK
+- `tarefas.c`: regras de negocio e persistencia
+- `tarefas.h`: estruturas e funcoes compartilhadas
+- `README.md`: documentacao do projeto
 
 ## Como compilar
 
-No Windows, usando `gcc`:
+Antes de compilar, o GTK 3 precisa estar instalado e visivel para o `pkg-config`.
 
-```bash
-gcc gerenciador_tarefas.c -Wall -Wextra -pedantic -std=c11 -o gerenciador_tarefas.exe
+Voce pode testar isso com:
+
+```powershell
+pkg-config --modversion gtk+-3.0
+```
+
+Se esse comando responder com uma versao, no PowerShell o build pode ser feito assim:
+
+```powershell
+$gtkFlags = (pkg-config --cflags --libs gtk+-3.0) -split ' '
+gcc gerenciador_tarefas.c tarefas.c -Wall -Wextra -pedantic -std=c11 -o gerenciador_tarefas.exe @gtkFlags
 ```
 
 ## Como executar
 
-```bash
+```powershell
 .\gerenciador_tarefas.exe
 ```
 
-## Persistencia de dados
+## Persistencia
 
-As tarefas sao salvas no arquivo `tarefas.dat`, criado automaticamente ao usar o programa. Esse arquivo fica fora do versionamento por causa do `.gitignore`.
+As tarefas sao salvas automaticamente em `tarefas.dat`. Esse arquivo fica fora do versionamento por causa do `.gitignore`, entao seus dados locais nao vao para o GitHub.
 
-## Estrutura do projeto
+## Observacao sobre este ambiente
 
-- `gerenciador_tarefas.c`: codigo-fonte principal
-- `README.md`: documentacao do projeto
-- `.gitignore`: arquivos locais ignorados pelo Git
+Neste ambiente do Codex, o GTK nao estava instalado, entao eu consegui:
 
-## Objetivo do projeto
+- implementar a interface GTK em codigo
+- validar a camada de dados compilando `tarefas.c`
 
-Este projeto foi criado para ajudar na organizacao de:
-
-- atividades diarias
-- projetos pessoais
-- estudos para provas e trabalhos da faculdade
+O build completo da interface vai funcionar assim que o GTK estiver configurado na sua maquina.
 
 ## Melhorias futuras
 
-- adicionar prioridade nas tarefas
+- editar uma tarefa existente
 - ordenar por prazo
-- editar tarefas existentes
-- buscar tarefas por titulo
-- melhorar a interface no terminal
+- adicionar prioridade
+- criar filtros por texto
+- separar tarefas por periodo ou disciplina

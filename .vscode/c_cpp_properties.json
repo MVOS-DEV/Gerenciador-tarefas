@@ -1,0 +1,51 @@
+{
+  "version": 4,
+  "configurations": [
+    {
+      "name": "MSYS2 UCRT64",
+      "compilerPath": "C:/msys64/ucrt64/bin/gcc.exe",
+      "intelliSenseMode": "windows-gcc-x64",
+      "cStandard": "c11",
+      "cppStandard": "c++17",
+      "defines": [
+        "_DEBUG",
+        "UNICODE",
+        "_UNICODE"
+      ],
+      "includePath": [
+        "${workspaceFolder}",
+        "C:/msys64/ucrt64/include",
+        "C:/msys64/ucrt64/include/gtk-3.0",
+        "C:/msys64/ucrt64/include/glib-2.0",
+        "C:/msys64/ucrt64/lib/glib-2.0/include",
+        "C:/msys64/ucrt64/include/pango-1.0",
+        "C:/msys64/ucrt64/include/cairo",
+        "C:/msys64/ucrt64/include/gdk-pixbuf-2.0",
+        "C:/msys64/ucrt64/include/atk-1.0",
+        "C:/msys64/ucrt64/include/harfbuzz",
+        "C:/msys64/ucrt64/include/freetype2",
+        "C:/msys64/ucrt64/include/libpng16",
+        "C:/msys64/ucrt64/include/pixman-1",
+        "C:/msys64/ucrt64/include/fribidi"
+      ],
+      "browse": {
+        "path": [
+          "${workspaceFolder}",
+          "C:/msys64/ucrt64/include",
+          "C:/msys64/ucrt64/include/gtk-3.0",
+          "C:/msys64/ucrt64/include/glib-2.0",
+          "C:/msys64/ucrt64/lib/glib-2.0/include",
+          "C:/msys64/ucrt64/include/pango-1.0",
+          "C:/msys64/ucrt64/include/cairo",
+          "C:/msys64/ucrt64/include/gdk-pixbuf-2.0",
+          "C:/msys64/ucrt64/include/atk-1.0",
+          "C:/msys64/ucrt64/include/harfbuzz",
+          "C:/msys64/ucrt64/include/freetype2",
+          "C:/msys64/ucrt64/include/libpng16",
+          "C:/msys64/ucrt64/include/pixman-1",
+          "C:/msys64/ucrt64/include/fribidi"
+        ]
+      }
+    }
+  ]
+}
